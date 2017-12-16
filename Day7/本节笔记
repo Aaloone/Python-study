@@ -11,8 +11,6 @@
 对象:实例化一个类之后得到的对象
 
 
-
-
 封装
    把一些功能的实现细节不对外暴露
 
@@ -31,7 +29,6 @@
                 self.course = course
 
 
-
 多态
     接口重用， 一种接口，多种实现
 
@@ -44,19 +41,16 @@
     把一个方法变成一个静态属性
 
 
-
-
 反射
     hasattr(obj,name_str) , 判断一个对象obj里是否有对应的name_str字符串的方法
     getattr(obj,name_str), 根据字符串去获取obj对象里的对应的方法的内存地址
     setattr(obj,'y',z), is equivalent to ``x.y = v''
     delattr
 
-
 异常
     try :
         code
-    except (Error1,Erro2) as e:
+    except (Error1,Erro2) as e: e = 错误的值
         print e
 
     except Exception :抓住所有错误，不建议用

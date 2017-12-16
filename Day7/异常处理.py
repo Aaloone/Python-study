@@ -26,7 +26,7 @@ names = ['alex','jack']
 try:
     open("tes.txt")
 
-except (KeyError,IndexError) as e :
+except (KeyError,IndexError) as e :    # e = 异常的值
     print("没有这个key",e)
 except IndexError as e :
     print("列表操作错误",e)
