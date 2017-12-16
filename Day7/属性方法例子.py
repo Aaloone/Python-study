@@ -20,9 +20,9 @@ class Flight(object):
             print("flight has departured already...")
         else:
             print("cannot confirm the flight status...,please check later")
-    @flight_status.setter 
+    @flight_status.setter
     def flight_status(self,status):
         print("flight %s has changed status to %s" %(self.flight_name,status))
 f = Flight("CA980")
-f.flight_status
-f.flight_status = 2
+f.flight_status()
+ f.flight_status = 2

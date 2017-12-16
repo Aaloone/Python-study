@@ -16,5 +16,5 @@ class Dog(object):
     def talk(self):
         print("%s is talking"% self.name)
 d = Dog("ChenRonghua")
-d.eat(d)
-d.talk()
+d.eat(d)     # 如果 def eat(self); 有参数，  则调用 eat( )  里面需要传入实例化参数 如果没有参数则不用传入
+d.talk()    #  没有@staticmethod  则不考虑

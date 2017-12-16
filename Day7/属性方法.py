@@ -13,7 +13,7 @@ class Dog(object):
 
     #@staticmethod #实际上跟类没什么关系了
     #@classmethod
-    @property #attribute 
+    @property #attribute    把一个方法变成静态属性
     def eat(self):
         print("%s is eating %s" %(self.name,self.__food))
     @eat.setter
@@ -28,16 +28,16 @@ class Dog(object):
     def talk(self):
         print("%s is talking"% self.name)
 
-    def __call__(self, *args, **kwargs):
+    def __call__(self, *args, **kwargs):     # 实例化之后再加 括号 即  对象() 或 类()()
         print("running call",args,kwargs)
 
     def __str__(self):
         return "<obj:%s>" %self.name
 
-#print(Dog.__dict__) #打印类里的所有属性，不包括实例属性
+print(Dog.__dict__) # 打印类里的所有属性，不包括实例属性
 d = Dog("ChenRonghua")
 print(d)
-# print(d.__dict__) #打印所有实例属性，不包括类属性
+print(d.__dict__) # 打印所有实例属性，不包括类属性
 # d(1,2,3,name=333)
 
 #Dog("ChenRonghua")()

@@ -11,7 +11,7 @@ class Dog(object):
         self.name = name
         #self.n  = 333
     #@staticmethod #实际上跟类没什么关系了
-    @classmethod #类方法下面的 方法调用的值 只能调用类变量的值
+    @classmethod #类方法下面的 方法调用的值 只能调用类变量的值，不能访问实例变量的值
     def eat(self):
         print("%s is eating %s" %(self.name,'dd'))
 
