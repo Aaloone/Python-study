@@ -1,4 +1,4 @@
-__author__ = "Alex Li"
+
 import threading,time
 
 import queue

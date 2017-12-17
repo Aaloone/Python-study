@@ -1,6 +1,6 @@
 __author__ = "Alex Li"
 
-import queue
+import queue     # 一个萝卜一个坑，放入一个多一个，取走一个少一个
 
 q = queue.PriorityQueue()  #设置优先级
 
