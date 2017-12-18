@@ -5,7 +5,7 @@ from multiprocessing import Process, Lock
 
 def f(l, i):
     #l.acquire()
-    print('hello world', i)
+    print('hello world', i)   
     #l.release()
 
 

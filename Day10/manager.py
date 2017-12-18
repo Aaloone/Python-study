@@ -10,13 +10,10 @@ def f(d, l):
     l.append(1)
     print(l,d)
 
-
 if __name__ == '__main__':
     with Manager() as manager:
         d = manager.dict()
-
         l = manager.list(range(5))
-
         p_list = []
         for i in range(10):
             p = Process(target=f, args=(d, l))
