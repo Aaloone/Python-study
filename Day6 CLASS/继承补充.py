@@ -53,7 +53,7 @@ class Student(SchoolMember):
         Sex:%s
         Stu_id:%s
         Grade:%s
-        ''' % (self.name, self.name, self.age, self.sex, self.stu_id, self.grade))
+        ''' % (self.name,self.name,self.age, self.sex, self.stu_id, self.grade))
     def pay_tuition(self,amount):    #新的参数，在 pay_tuition(amount) 一定要给 amount 传参数
         print("%s has paid tution for $%s"% (self.name,amount) )
 
@@ -65,9 +65,10 @@ t2 = Teacher("Alex",22,"M",3000,"PythonDevOps",school)
 
 s1 = Student("ChenRonghua",36,"MF",1001,"PythonDevOps") #实例化一个类
 s2 = Student("徐良伟",19,"M",1002,"Linux")
-
-
+print(s1.tell())
+print(t1.tell())
 school.hire(t1)
 school.enroll(s1)
 school.enroll(s2)
+
 t1.school.enroll(t1)      # 组合，可以成功，作用等于上面一行的效果

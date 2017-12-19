@@ -1,5 +1,5 @@
 # 继承 在子类中传入参数，然后可以直接调用父类的方法，父类自动获取子类传入的值
-class Role:
+class Role(object):
     n = 123 #类变量    大家公用的属性，节省内存开销
     n_list = []
     name = "我是类name"
@@ -10,23 +10,23 @@ class Role:
         self.role = role
         self.weapon = weapon
         self.__life_value = life_value	#添加两个下划线，定义为私有属性，
-										#外部访问不了，不能在外都调取
+										#外部访问不了，不能在外都调取,只能在类内部调用
         self.money = money
     def __del__(self):
-	#析构函数： 在实例释放、销毁的时候自动执行的，通常用于做一些收尾工作， 如关闭一些数据库连接，关闭打开的临时文件
-	#在程序结束时执行,外部删除实例是也执行
+	# 析构函数： 在实例释放、销毁的时候自动执行的，通常用于做一些收尾工作， 如关闭一些数据库连接，关闭打开的临时文件
+	# 在程序结束时执行,外部删除实例是也执行，只是执行这步函数，需要自己定义需要执行的函数，比如删除变量之类
         pass #print("%s 彻底死了。。。。" %self.name)
 
     def show_status(self):
         n = 3
         print("name:%s weapon:%s life_val:%s" %(self.name,
                                                  self.weapon,
-                                                self.__life_value))	#私有属性内部可以访问。调取
+                                                self.__life_value))	# 私有属性内部可以访问。调取
     def shot(self): # 类的方法，功能 （动态属性）
         print("shooting...")
 
-    def __got_shot(self): #私有方法，外部不可访问
-        self.__life_value -=50      #私有属性
+    def __got_shot(self): # 私有方法，外部不可访问
+        self.__life_value -=50      # 私有属性
         print("%s:ah...,I got shot..."% self.name)
 
     def buy_gun(self, gun_name):
@@ -36,29 +36,24 @@ class Role:
 
 r1 = Role('Chenronghua', 'police',  'AK47') # Role(r1,'Alex', 'police',  'AK47')把一个类变成一个具体对象的过程叫 实例化(初始化一个类，造了一个对象)
 r1.buy_gun("AK47")
-r1.n = 'abc'   #相当于添加了实例变量，不影响类变量，函数在执行的时候，先找实例变量，再找类变量。
-Role.n = 'sdfsf'  #更改类变量
+Role.n = 'sdfsf'  # 更改类变量
+r1.n = 'abc'   # 相当于添加了实例变量，不影响类变量，函数在执行的时候，先找实例变量，再找类变量。
 r1.got_shot()
 r1.__got_shot()#出错，不可访问
 print(r1.show_status())
 
-
-
-r2 = Role('jack', 'terrorist', 'B22')  #生成一个角色
+r2 = Role('jack', 'terrorist', 'B22')  # 生成一个角色
 r2.got_shot()  #Rele.get_shot(r2)
 r1.name = "陈荣华"
-r1.n_list.append("from r1")		#添加到了类变量，而不是实例变量
-r1.n_list = [1,2,3,4]		#添加到实例变量
+r1.n_list.append("from r1")		# 添加到了类变量，而不是实例变量
+r1.n_list = [1,2,3,4]		# 添加到实例变量
 r2.n_list.append("from r2")
 print("r2:",r2.name,r2.n,r2.n_list)
 print(Role.n_list)   # 和 r1.n_list, r2.n_list 的结果一样
-r1.bullet_prove = True  #可以给 ri 类中添加属性，添加了一个实例变量
-# r1.n = "改类变量" 	#实质是给 ri 创建了一个实例变量，不是修改类 role 中的类变量
+r1.bullet_prove = True  # 可以给 ri 类中添加属性，添加了一个实例变量
+# r1.n = "改类变量" 	# 实质是给 ri 创建了一个实例变量，不是修改类 role 中的类变量
 # print("r1:",r1.weapon,r1.n )
 # #del r1.weapon
-#
-#
-#
 #
 # #print(r1.n,r1.name,r1.bullet_prove,r1.weapon)
 #

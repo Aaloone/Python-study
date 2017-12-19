@@ -1,5 +1,3 @@
-__author__ = "Alex Li"
-
 
 class Dog:
     def __init__(self,name):
