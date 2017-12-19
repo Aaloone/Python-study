@@ -1,4 +1,3 @@
-__author__ = "Alex Li"
 
 import threading
 import time
@@ -12,7 +11,7 @@ start_time = time.time()
 t_objs = [] #存线程实例
 for i in range(50):
     t = threading.Thread(target=run,args=("t-%s" %i ,))
-    t.setDaemon(True) #把当前线程设置为守护线程    必须在start之前 守护线程不重要，无论结束是否结束，在非守护线程结束以后，系统就退出了
+    t.setDaemon(True) #把当前线程设置为守护线程    必须在start之前 守护线程不重要，无论结束是否结束，在非守护线程结束以后，系统就退出
     t.start()
     t_objs.append(t) #为了不阻塞后面线程的启动，不在这里join，先放到一个列表里
 

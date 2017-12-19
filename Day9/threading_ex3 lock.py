@@ -1,7 +1,10 @@
-__author__ = "Alex Li"
-
 import threading
 import time
+
+
+lock = threading.Lock()
+num = 0
+t_objs = [] #存线程实例
 
 def run(n):
     lock.acquire()
@@ -10,10 +13,6 @@ def run(n):
     time.sleep(1)
     lock.release()
 
-
-lock = threading.Lock()
-num = 0
-t_objs = [] #存线程实例
 for i in range(50):
     t = threading.Thread(target=run,args=("t-%s" %i ,))
     t.start()

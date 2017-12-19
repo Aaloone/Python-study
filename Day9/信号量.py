@@ -4,7 +4,7 @@ import threading, time
 
 
 def run(n):
-    semaphore.acquire()
+    semaphore.acquire()    #控制同时允许进行的线程，请求线程
     time.sleep(1)
     print("run the thread: %s\n" % n)
     semaphore.release()
@@ -15,7 +15,8 @@ if __name__ == '__main__':
         t = threading.Thread(target=run, args=(i,))
         t.start()
 while threading.active_count() != 1:
-    pass  # print threading.active_count()
+    # print(threading.active_count())
+    pass
 else:
     print('----all threads done---')
     #print(num)
