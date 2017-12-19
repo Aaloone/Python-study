@@ -31,9 +31,10 @@ class Dog(object):
     def __call__(self, *args, **kwargs):     # 实例化之后再加 括号 即  对象() 或 类()()
         print("running call",args,kwargs)
 
-    def __str__(self):
+    def __str__(self):   # 打印时返回 __str__的返回值
         return "<obj:%s>" %self.name
 
+print(Dog.__doc__)  # 打印函数的帮助提示
 print(Dog.__dict__) # 打印类里的所有属性，不包括实例属性
 d = Dog("ChenRonghua")
 print(d)

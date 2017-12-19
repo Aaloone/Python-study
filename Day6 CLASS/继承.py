@@ -40,7 +40,7 @@ class Woman(People,Relation):	#多继承，执行顺序从左到右
 
 print("in the func")
 m1 = Man("NiuHanYang",22,'it')
-print(m1.job)
+print(m1.eat())
 w1 = Woman("ChenRonghua",26)
 #
 m1.make_friends(w1)

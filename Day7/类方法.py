@@ -6,7 +6,7 @@ import os
 
 class Dog(object):
     #n = 333
-    #name = "huazai"
+    name = "huazai"
     def __init__(self,name):
         self.name = name
         #self.n  = 333
@@ -20,4 +20,4 @@ class Dog(object):
 
 
 d = Dog("ChenRonghua")
-d.eat()
+d.eat()    # huazai is eating dd ,只能访问类变量的值，且必须被定义

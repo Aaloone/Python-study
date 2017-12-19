@@ -1,14 +1,12 @@
-__author__ = "Alex Li"
+
+class Foo(object):
+    def __init__(self, name):
+        self.name = name
 
 
-# class Foo(object):
-#     def __init__(self, name):
-#         self.name = name
-#
-#
-# f = Foo("alex")
-# print(type(f))
-# print(type(Foo))
+f = Foo("alex")
+print(type(f))
+print(type(Foo))
 
 
 def func(self):

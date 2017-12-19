@@ -4,4 +4,4 @@ from lib.aa import C
 
 obj = C()
 print(obj.__module__)  # 输出 lib.aa，即：输出从哪里调用此模块
-print(obj.__class__ )     # 输出 lib.aa.C，即：输出从哪里调用此类
+print((obj.__class__))     # 输出 lib.aa.C，即：输出从哪里调用此类
